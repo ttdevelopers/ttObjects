@@ -3,8 +3,8 @@ ttObjects = {
   getRoom : function() {
     for (var memberName in turntable) {
       var member = turntable[memberName];
-      if (member === null || typeof member !== 'object') continue;
-      if (typeof member.setupRoom === 'object') {
+      if (typeof member !== 'object' || member === null) continue;
+      if (typeof member.setupRoom !== 'undefined') {
         ttObjects.room = member;
         return member;
       }
@@ -16,8 +16,8 @@ ttObjects = {
   getManager : function() {
     for (var memberName in ttObjects.getRoom()) {
       var member = ttObjects.room[memberName];
-      if (member === null || typeof member !== 'object') continue;
-      if (typeof member.blackswan === 'object') {
+      if (typeof member !== 'object' || member === null) continue;
+      if (typeof member.blackswan !== 'undefined') {
         ttObjects.manager = member;
         return member;
       }
