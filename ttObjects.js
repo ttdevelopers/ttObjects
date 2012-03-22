@@ -23,5 +23,19 @@ ttObjects = {
       }
     }
     return false;
+  },
+
+  api : null,
+  getApi: function () {
+    var apiRegex = / Preparing message /i;
+    for (var memberName in turntable) {
+      var member = turntable[memberName];
+      if (typeof member !== 'function') continue;
+      if (apiRegex.test(member.toString())) {
+        ttObjects.api = member;
+        return member;
+      }
+    }
+    return false;
   }
 };
