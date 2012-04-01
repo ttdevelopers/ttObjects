@@ -31,8 +31,7 @@ ttObjects = {
     for (var memberName in turntable) {
       var member = turntable[memberName];
       if (typeof member !== 'function') continue;
-      member.toString = Function.prototype.toString;
-      if (apiRegex.test(member.toString())) {
+      if (apiRegex.test(Function.prototype.toString.apply(member))) {
         ttObjects.api = member;
         return member;
       }
