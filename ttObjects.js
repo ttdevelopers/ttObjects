@@ -1,4 +1,8 @@
-ttObjects = {
+(function() {
+
+if (ttObjects) return;
+
+var ttObjects = {
   room : null,
   getRoom : function() {
     for (var memberName in turntable) {
@@ -39,3 +43,11 @@ ttObjects = {
     return false;
   }
 };
+
+// export our object
+if (typeof exports !== "undefined")
+	exports = ttObjects;
+else if (typeof window !== "undefined")
+	window.ttObjects = ttObjects;
+
+})();
