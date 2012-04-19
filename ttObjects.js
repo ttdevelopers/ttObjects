@@ -45,9 +45,9 @@ var ttObjects = {
 };
 
 // export our object
-if (typeof exports !== "undefined")
-	exports = ttObjects;
-else if (typeof window !== "undefined")
+if (typeof module === 'object' && exports in module)
+	module.exports = ttObjects;
+if (typeof window !== "undefined")
 	window.ttObjects = ttObjects;
 
 })();
