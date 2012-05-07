@@ -1,7 +1,5 @@
 (function() {
 
-if (ttObjects) return;
-
 var ttObjects = {
   room : null,
   getRoom : function() {
