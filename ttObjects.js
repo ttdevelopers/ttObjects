@@ -19,7 +19,7 @@ var ttObjects = {
     for (var memberName in ttObjects.getRoom()) {
       var member = ttObjects.room[memberName];
       if (typeof member !== 'object' || member === null) continue;
-      if (typeof member.blackswan !== 'undefined') {
+      if (typeof member.callback !== 'undefined') {
         ttObjects.manager = member;
         return member;
       }
